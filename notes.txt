@@ -1,0 +1,18 @@
+AlmaLinux CodeServer
+
+https://coder.com/docs/code-server/latest/install#fedora-centos-rhel-suse
+
+export VERSION=4.20.1
+
+curl -fOL https://github.com/coder/code-server/releases/download/v$VERSION/code-server-$VERSION-amd64.rpm
+sudo rpm -i code-server-$VERSION-amd64.rpm
+sudo systemctl enable --now code-server@$USER
+
+
+DOCKERFILE
+Install apps
+install code-server
+
+
+ENTRYPOINT
+Create user?
