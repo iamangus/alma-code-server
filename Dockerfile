@@ -7,7 +7,7 @@ ENV SOSP_VER="3.8.1"
 
 COPY kubernetes.repo /etc/yum.repos.d/kubernetes.repo 
 
-RUN hostnamectl set-hostname devbox
+RUN echo "devbox" > /etc/hostname
 
 RUN dnf install dnf-plugins-core -y && \   
     dnf config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
