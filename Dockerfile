@@ -7,7 +7,7 @@ ENV SOSP_VER="3.8.1"
 
 COPY kubernetes.repo /etc/yum.repos.d/kubernetes.repo 
 
-RUN echo "devbox" > /etc/hostname
+RUN dnf update -y
 
 RUN dnf install dnf-plugins-core -y && \   
     dnf config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
@@ -16,6 +16,8 @@ RUN dnf install dnf-plugins-core -y && \
     dnf install -y https://github.com/derailed/k9s/releases/download/v$k9s_VER/k9s_linux_amd64.rpm  && \
     dnf install -y https://github.com/getsops/sops/releases/download/v$SOSP_VER/sops-$SOSP_VER.x86_64.rpm && \
     dnf install -y vim ipmitool kubectl terraform sudo gh git zsh util-linux-user
+
+RUN echo "devbox" > /etc/hostname
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
