@@ -9,7 +9,7 @@ RUN dnf install dnf-plugins-core -y && \
     dnf config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \    
     curl -fOL https://github.com/coder/code-server/releases/download/v$CS_VER/code-server-$CS_VER-amd64.rpm && \
     rpm -i code-server-$CS_VER-amd64.rpm && \
-    dnf install -y vim ipmitool kubectl terraform
+    dnf install -y vim ipmitool kubectl terraform sudo
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
