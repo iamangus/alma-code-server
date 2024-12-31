@@ -3,10 +3,6 @@ set -eu
 
 code-server --install-extension golang.go &
 
-a-h.templ
-
-saoudrizwan.claude-dev-
-
 code-server --install-extension ms-python.python &
 
 sudo useradd -s $(which zsh) -m ${USER_NAME}
