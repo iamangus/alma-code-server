@@ -13,11 +13,11 @@ sudo echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER_NAME}
 
 sudo chsh -s $(which -zsh)
 
-declare -a exts=("golang.go" "a-h.templ" "saoudrizwan.claude-dev" "ms-python.python")
+#declare -a exts=("golang.go" "a-h.templ" "saoudrizwan.claude-dev" "ms-python.python")
 
-for i in "${exts[@]}"
-do
-   su $USER_NAME --command "code-server --install-extension $i &"
-done
+#for i in "${exts[@]}"
+#do
+#   su $USER_NAME --command "code-server --install-extension $i &"
+#done
 
 su $USER_NAME --command "code-server --auth none --bind-addr 0.0.0.0:8080 '/home/${USER_NAME}'"
