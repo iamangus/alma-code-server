@@ -11,7 +11,7 @@ sudo chown -R ${USER_NAME}:${USER_NAME} /home/${USER_NAME}
 
 sudo echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER_NAME}
 
-sudo chsh -s $(which -zsh)
+sudo chsh -s $(which zsh)
 
 #declare -a exts=("golang.go" "a-h.templ" "saoudrizwan.claude-dev" "ms-python.python")
 
