@@ -13,7 +13,7 @@ sudo echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER_NAME}
 
 sudo chsh -s $(which zsh)
 
-[ -f /home/angoo/.ssh/authorized_keys ] || su $USER_NAME --command "curl https://github.com/iamangus.keys | tee -a /home/angoo/.ssh/authorized_keys"
+[ -f /home/$USER_NAME/.ssh/authorized_keys ] || su $USER_NAME --command "curl https://github.com/$GH_USER_NAME.keys | tee -a ~/.ssh/authorized_keys"
 
 declare -a exts=("golang.go" "a-h.templ" "saoudrizwan.claude-dev" "ms-python.python")
 
