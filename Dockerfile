@@ -1,8 +1,8 @@
 FROM almalinux:latest
 
 ENV TZ="America/Chicago"
-ENV CS_VER="4.103.1"
-ENV k9s_VER="0.32.4"
+ENV CS_VER="4.106.2"
+ENV k9s_VER="0.50.16"
 ENV SOSP_VER="3.8.1"
 ENV HOSTNAME="devbox"
 
