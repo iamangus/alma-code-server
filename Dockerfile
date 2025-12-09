@@ -3,8 +3,8 @@ FROM almalinux:latest
 ENV TZ="America/Chicago"
 ENV CS_VER="4.106.2"
 ENV k9s_VER="0.50.16"
-ENV SOSP_VER="3.8.1"
-ENV NODE_VER="24"
+ENV SOPS_VER="3.8.1"
+ENV NODE_VER="23"
 ENV HOSTNAME="devbox"
 
 COPY kubernetes.repo /etc/yum.repos.d/kubernetes.repo 
@@ -15,7 +15,7 @@ RUN dnf install dnf-plugins-core -y && \
     dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo && \
     dnf install -y https://github.com/coder/code-server/releases/download/v$CS_VER/code-server-$CS_VER-amd64.rpm && \
     dnf install -y https://github.com/derailed/k9s/releases/download/v$k9s_VER/k9s_linux_amd64.rpm  && \
-    dnf install -y https://github.com/getsops/sops/releases/download/v$SOSP_VER/sops-$SOSP_VER.x86_64.rpm && \
+    dnf install -y https://github.com/getsops/sops/releases/download/v$SOPS_VER/sops-$SOPS_VER.x86_64.rpm && \
     dnf install -y epel-release && \
     dnf module install -y nodejs:$NODE_VER && \
     dnf install -y vim ipmitool kubectl openssh-server opentofu sudo gh git zsh util-linux-user ansible golang && \
