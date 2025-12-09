@@ -19,7 +19,9 @@ RUN dnf install dnf-plugins-core -y && \
     dnf install -y epel-release && \
 #    dnf module install -y nodejs:$NODE_VER && \
     dnf install -y vim ipmitool kubectl openssh-server opentofu sudo gh git zsh util-linux-user golang && \
-    dnf install -y libnss3.so libatk-1.0.so.0 chromium chromium-headless nss atk at-spi2-atk libXcomposite libXcursor libXdamage libXext libXi libXtst cups-libs libXScrnSaver libXrandr alsa-lib pango at-spi2-core libXt xorg-x11-server-Xvfb mesa-libgbm
+    dnf install -y  chromium chromium-headless nss atk at-spi2-atk libXcomposite libXcursor libXdamage libXext libXi libXtst cups-libs libXScrnSaver libXrandr alsa-lib pango at-spi2-core libXt mesa-libgbm
+
+# libnss3.so libatk-1.0.so.0 xorg-x11-server-Xvfb
 
 RUN ssh-keygen -A
 
